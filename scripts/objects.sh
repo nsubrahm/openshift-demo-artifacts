@@ -6,7 +6,7 @@ function init {
 }
 #
 function ocCheck {
-    if [ `oc version --short ` -eq 0 ] ; then
+    if `oc version --short` ; then
         echo 'OpenShift cluster is running'
         return 1
     else
@@ -55,7 +55,7 @@ function createObjects {
 #
 function run {
     init
-    if [ `ocCheck` -eq 1 ] ; then
+    if `ocCheck` ; then
         createObjects
     fi
     exit $?
