@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/description: "CustDemo - NodeJS API for customers"
+    openshift.io/display-name: "CustDemo"
+  name: custdemo
+spec:
+  finalizers:
+  - kubernetes
+
