@@ -21,30 +21,35 @@ function createObjects {
         echo 'Project added.'
     else
         echo 'Project not added.'
+    fi
 #    
     oc create -f ${YAML_HOME}/openshift-demo-configmap.yaml
     if [ $? -eq 0 ] ; then 
         echo 'Configuration map added.'
     else
         echo 'Configuration map not added.'
+    fi        
 #
     oc create -f ${YAML_HOME}/openshift-demo-service.yaml
     if [ $? -eq 0 ] ; then 
         echo 'Service added.'
     else
         echo 'Service not added.'
+    fi        
 #
     oc create -f ${YAML_HOME}/openshift-demo-endpoint.yaml
     if [ $? -eq 0 ] ; then 
         echo 'Endpoint added.'
     else
         echo 'Endpoint not added.'
+    fi        
 #
     oc create -f ${YAML_HOME}/openshift-demo-route.yaml
     if [ $? -eq 0 ] ; then 
         echo 'Route added.'
     else
         echo 'Route not added.'
+    fi        
 #
 }
 #
@@ -55,3 +60,5 @@ function run {
     fi
     exit $?
 }
+#
+run
