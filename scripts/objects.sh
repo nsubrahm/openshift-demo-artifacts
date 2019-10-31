@@ -55,7 +55,7 @@ function createObjects {
 #
 function run {
     init
-    if [ ocCheck -eq 1 ] ; then
+    if [ `ocCheck` -eq 1 ] ; then
         createObjects
     fi
     exit $?
