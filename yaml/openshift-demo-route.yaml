@@ -8,7 +8,7 @@ metadata:
 spec:
   to:
     kind: Service
-    name: custdemo-svc
+    name: openshift-demo-customers
     weight: 100
   wildcardPolicy: None
 

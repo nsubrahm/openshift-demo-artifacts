@@ -6,17 +6,17 @@ function init {
 }
 #
 function ocCheck {
-    if `oc version --short` ; then
+    if `oc version --short > /dev/null` ; then
         echo 'OpenShift cluster is running'
-        return 1
+        return 0
     else
         echo 'Could not connect to OpenShift cluster. Exiting.'
-        return 0
+        return 1
     fi
 }
 #
 function createObjects {
-    oc create -f ${YAML_HOME}/openshift-demo-project.yaml
+    oc new-project custdemo
     if [ $? -eq 0 ] ; then 
         echo 'Project added.'
     else
@@ -55,7 +55,7 @@ function createObjects {
 #
 function run {
     init
-    if `ocCheck` ; then
+    if ocCheck ; then
         createObjects
     fi
     exit $?
