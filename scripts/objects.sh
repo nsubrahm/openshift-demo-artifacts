@@ -51,6 +51,13 @@ function createObjects {
         echo 'Route not added.'
     fi        
 #
+    oc create -f ${YAML_HOME}/openshift-demo-deployment-config.yaml
+    if [ $? -eq 0 ] ; then 
+        echo 'Deployment configuration added.'
+    else
+        echo 'Deployment configuration not added.'
+    fi        
+#
 }
 #
 function run {
