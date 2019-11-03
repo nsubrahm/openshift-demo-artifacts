@@ -23,6 +23,13 @@ function createObjects {
         echo 'Project not added.'
     fi
 #    
+    oc new-app redis
+    if [ $? -eq 0 ] ; then 
+        echo 'Redis container installed.'
+    else
+        echo 'Redis container not installed.'
+    fi 
+#
     oc create -f ${YAML_HOME}/openshift-demo-configmap.yaml
     if [ $? -eq 0 ] ; then 
         echo 'Configuration map added.'

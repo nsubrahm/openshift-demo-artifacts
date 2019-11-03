@@ -10,7 +10,7 @@ function launch {
     # Create all OpenShift artifacts
     ${SCRIPTS_HOME}/objects.sh
     # Launch application
-    oc new-app https://github.com/nsubrahm/openshift-demo-customers
+    oc new-app https://github.com/nsubrahm/openshift-demo-customers#redis_customer
 }
 #
 launch
